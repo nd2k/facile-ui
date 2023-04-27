@@ -1,23 +1,29 @@
 <script lang="ts">
     import "$lib/styles/main.css";
 	import App from "$lib/layouts/App.svelte";
-	import AppHeader from "$lib/layouts/AppHeader.svelte";
+	import AppHeader from "$lib/layouts/AppBar.svelte";
 	import Sidebar from "$lib/layouts/Sidebar.svelte";
-	import ThemeManager from "$lib/components/ThemeManager.svelte";
+	import ThemeManager from "$lib/layouts/ThemeManager.svelte";
 </script>
 
 <ThemeManager>
 	<App>
-		<!-- <svelte:fragment slot="header">Header</svelte:fragment>-->
-		<svelte:fragment slot="sidebarLeft">Sidebar Left</svelte:fragment>
-		<!--<svelte:fragment slot="sidebarRight">Sidebar Right</svelte:fragment> -->
-		<svelte:fragment slot="pageHeader">
+		<svelte:fragment slot="header">
 			<AppHeader>
 				<svelte:fragment slot="start">(icon)</svelte:fragment>
 				(title)
 				<svelte:fragment slot="end">(actions)</svelte:fragment>
 			</AppHeader>
 		</svelte:fragment>
+		<svelte:fragment slot="sidebarLeft">
+			<Sidebar>
+				<svelte:fragment slot="start">(head)</svelte:fragment>
+				(content)
+				<svelte:fragment slot="end">(footer)</svelte:fragment>
+			</Sidebar>
+		</svelte:fragment>
+		<!--<svelte:fragment slot="sidebarRight">Sidebar Right</svelte:fragment> -->
+		<svelte:fragment slot="pageHeader"></svelte:fragment>
 		<!-- Router Slot -->
 		<slot />
 		<!-- ---- / ---- -->

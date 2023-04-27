@@ -1,3 +1,7 @@
+<script lang="ts">
+
+</script>
+
 <nav class="navbar">
     <div class="navbar-content">
         <!-- Slot: Start-->
@@ -26,7 +30,12 @@
     }
 
     .navbar-content {
+        width: 100%;
         display: flex;
-        justify-content: space-around;
+        text-align: center;
+    }
+
+    .navbar-default {
+        flex: 1;
     }
 </style>

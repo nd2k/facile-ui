@@ -59,10 +59,6 @@
         overflow-y: hidden;
     }
 
-    #app-header {
-        flex: 1;
-    }
-
     #app-content {
         flex: 5;
         display: flex;
@@ -87,15 +83,7 @@
         flex: 5;
     }
 
-    #page-footer {
-        flex: 1;
-    }
-
     #sidebar-right {
-        flex: 1;
-    }
-
-    #app-footer {
         flex: 1;
     }
 
