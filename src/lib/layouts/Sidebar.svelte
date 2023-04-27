@@ -20,6 +20,7 @@
         flex-direction: column;
         height: 100%;
         gap: 1rem;
+        border-right: 5px solid var(--secondary-color-500);
     }
     .sidebar-content {
         flex: 5;

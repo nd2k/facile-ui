@@ -1,9 +1,9 @@
 <script lang="ts">
-
-
+    export let size: string = "auto";
+    let style = `width: ${size};`;
 </script>
 
-<button>
+<button {style}>
     <!--Slot: Start-->
     {#if $$slots.start}
         <div id="button-start"><slot name="start" /></div>
@@ -24,7 +24,7 @@
         border: 1px solid var(--primary-color-500);
         background-color: var(--primary-color-300);
         padding: 0.5rem;
-        gap: 0.2rem;
+        gap: 0.5rem;
         cursor: pointer;
         width: 50%;
     }

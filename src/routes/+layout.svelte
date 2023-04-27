@@ -17,8 +17,13 @@
 		</svelte:fragment>
 		<svelte:fragment slot="sidebarLeft">
 			<Sidebar>
-				<svelte:fragment slot="start">(head)</svelte:fragment>
-				(content)
+				<!-- <svelte:fragment slot="start">(head)</svelte:fragment> -->
+				<div class="sidebar-menu">
+					<ul>
+						<li>Home</li>
+						<li>About</li>
+					</ul>
+				</div>
 				<svelte:fragment slot="end">(footer)</svelte:fragment>
 			</Sidebar>
 		</svelte:fragment>
@@ -31,3 +36,7 @@
 		<!-- <svelte:fragment slot="footer">Footer</svelte:fragment> -->
 	</App>
 </ThemeManager>
+
+<style>
+
+</style>

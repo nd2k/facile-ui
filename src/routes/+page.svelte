@@ -4,12 +4,19 @@
 	import { icons } from "$lib/data/icon";
 </script>
 
-<h1>Content</h1>
-<Icon icon={icons.cog} />
-<Button>
-    <svelte:fragment slot="start">
-        <Icon icon={icons.moon} color="var(--font-light-color)"/>
-    </svelte:fragment>
-    Btn
-    <svelte:fragment slot="end">(actions)</svelte:fragment>
-</Button>
+<div class="home-page">
+    <h1>Content</h1>
+    <Button>
+        <svelte:fragment slot="start">
+            <Icon icon={icons.moon} color="var(--font-light-color)"/>
+        </svelte:fragment>
+        Button
+        <!-- <svelte:fragment slot="end">(actions)</svelte:fragment> -->
+    </Button>
+</div>
+
+<style>
+    .home-page {
+        padding: 1rem;
+    }
+</style>

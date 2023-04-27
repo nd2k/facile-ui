@@ -4,7 +4,7 @@ export enum ThemeEnum {
 }
 
 export const theme = {
-    theme: ThemeEnum.DARK,
+    theme: ThemeEnum.LIGHT,
     colors: {
         primary: {
             100: "#cce2e4",
