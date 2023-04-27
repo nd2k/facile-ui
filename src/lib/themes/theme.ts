@@ -38,6 +38,19 @@ export const theme = {
             700: "#939393",
             800: "#626262",
             900: "#313131"
+        },
+        font: {
+            50: "#ffffff",
+            100: "#f4f4f5",
+            200: "#e4e4e5",
+            300: "#d4d4d8",
+            400: "#a1a1aa",
+            500: "#71717a",
+            600: "#52525b",
+            700: "#3f3f46",
+            800: "#27272a",
+            900: "#18181b",
+            950: "#000000"          
         }
     },
     fontSizes: {
@@ -49,8 +62,8 @@ export const theme = {
     },
     fonts: {
         body: {
-            family: '"Roboto"',
-            url: "https://fonts.googleapis.com/css2?family=DM+Sans&family=Poppins:wght@100&family=Roboto:wght@300",
+            family: '"Quicksand"',
+            url: "https://fonts.googleapis.com/css2?family=Quicksand&display=swap",
             darkColor: "#000000",
             lightColor: "#ffffff"
         },

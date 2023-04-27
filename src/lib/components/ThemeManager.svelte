@@ -10,6 +10,9 @@
 </script>
 
 <svelte:head>
+    <title>Facile-UI SvelteKit Framework - The easiest way to develop
+        a front-end application.
+    </title>
 	<link href={url} rel="stylesheet" />
 </svelte:head>
 

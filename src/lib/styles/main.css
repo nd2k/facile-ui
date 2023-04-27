@@ -4,6 +4,6 @@
     font-family: var(--body-font);
     font-size: var(--md-font);
     background-color: var(--background-color-300);
-    color: var(--body-font-color);
+    color: var(--font-color-950);
     box-sizing: border-box; 
 }

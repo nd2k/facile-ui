@@ -17,11 +17,11 @@ export function initializeTheme(theme: Theme): string {
         if (token === "fonts") {
             for (const token2 in theme.fonts) {
                 style += `--${token2}-font: ${theme.fonts[token2].family};`;
-                if (theme.theme === ThemeEnum.LIGHT) {
-                    style += `--${token2}-font-color: ${theme.fonts[token2].darkColor};`;  
-                } else {
-                    style += `--${token2}-font-color: ${theme.fonts[token2].lightColor};`;  
-                }
+                // if (theme.theme === ThemeEnum.LIGHT) {
+                //     style += `--${token2}-font-color: ${theme.fonts[token2].darkColor};`;  
+                // } else {
+                //     style += `--${token2}-font-color: ${theme.fonts[token2].lightColor};`;  
+                // }
             }
         }
         if (token === "fontSizes") {
