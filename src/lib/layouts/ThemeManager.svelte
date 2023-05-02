@@ -1,11 +1,13 @@
 <script lang="ts">
 	import { themeStore } from "$lib/store/themestore";
+	import { theme } from "$lib/themes/theme";
+	import { setPadding } from "$lib/utils/classUtils";
 	import { initializeTheme } from "$lib/utils/themeUtils";
 
     let style: string;
     let url: string;
     
-    style = `${initializeTheme($themeStore)}`;
+    style = initializeTheme($themeStore);
     url = $themeStore.fonts.body.url;
 </script>
 

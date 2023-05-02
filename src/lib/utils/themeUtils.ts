@@ -3,30 +3,32 @@ import type { Theme } from "interfaces";
 
 export function initializeTheme(theme: Theme): string {
     let style: string = "";
-    if (theme.theme === ThemeEnum.DARK) {
-        theme.colors = getDarkTheme(theme.colors);
-    }
     for (const token in theme) {
-        if (token === "colors") {
+        if (token === "theme") {
+            if (theme.theme === ThemeEnum.DARK) {
+                theme.colors = getDarkTheme(theme.colors);
+            }
+        }
+        else if (token === "colors") {
             for (const token2 in theme.colors) {
                 for (const color in theme.colors[token2]) {
                     style += `--${token2}-color-${color}: ${theme.colors[token2][color]};`;  
                 }
             }
         }
-        if (token === "fonts") {
+        else if (token === "fonts") {
             for (const token2 in theme.fonts) {
                 style += `--${token2}-font: ${theme.fonts[token2].family};`;
-                // if (theme.theme === ThemeEnum.LIGHT) {
-                //     style += `--${token2}-font-color: ${theme.fonts[token2].darkColor};`;  
-                // } else {
-                //     style += `--${token2}-font-color: ${theme.fonts[token2].lightColor};`;  
-                // }
             }
         }
-        if (token === "fontSizes") {
+        else if (token === "fontSizes") {
             for (const token2 in theme.fontSizes) {
                 style += `--${token2}-font: ${theme.fontSizes[token2]};`;
+            }
+        }
+        else {
+            for (const token2 in theme[token]) {
+                style += `--${token}-${token2}: ${theme[token][token2]};`;
             }
         }
     }
@@ -48,35 +50,3 @@ function getDarkTheme(colors: {[key: string]: {[key: number]: string}})
     })
     return darkColors;   
 }
-
-// export function getPropertyFromTheme(theme: Theme, props: ThemeProps|null) {
-//     let style: string = "";
-//     let color: string = theme.colors.primary
-//     let font: string = theme.fonts.body;
-//     for (const token in theme) {
-//         for (const prop in props) {
-//             prop === token && token === "colors"
-//             props.colors === "primary"
-//             ? color = theme.colors.primary
-//             : null;
-//             props.colors === "secondary"
-//             ? color = theme.colors.secondary
-//             : null;
-//         }
-//     }
-//     for (const token in theme) {
-//         for (const prop in props) {
-//             prop === token && token === "fonts"
-//             props.colors === "body"
-//             ? font = theme.fonts.body
-//             : null;
-//             props.colors === "heading"
-//             ? font = theme.fonts.heading
-//             : null;
-//         }
-//     }
-//     style += `--color: ${color};`
-//     style += `--font: ${font};`
-//     style += "};"
-//     return style;
-// }

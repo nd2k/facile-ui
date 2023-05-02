@@ -58,9 +58,9 @@
         min-height: 100vh;
         overflow-y: hidden;
     }
-
+    
     #app-content {
-        flex: 5;
+        flex: 100%;
         display: flex;
         flex-direction: row wrap;
     }
@@ -72,15 +72,11 @@
     #page {
         display: flex;
         flex-direction: column;
-        flex: 4;
-    }
-
-    #page-header {
-        flex: 0;
+        flex: 3;
     }
 
     #page-content {
-        flex: 5;
+        flex: 100%;
     }
 
     #sidebar-right {

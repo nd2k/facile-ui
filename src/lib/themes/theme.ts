@@ -68,4 +68,24 @@ export const theme = {
             lightColor: "#ffffff"
         },
     },
+    border: {
+        radius: "1rem",
+        solid: "1px"
+    },
+    button: {
+        color: "#ffffff",
+        bgColor: "#66a7ad",
+        borderColor: "#006d77",
+        size: "auto",
+        onClick: () => console.log("click"),
+        borderRadius: "0.5rem",
+        border: "1px",
+        gap: "0.5rem",
+        padding: {
+            paddingTop: "0.5rem",
+            paddingRight: "0.5rem",
+            paddingBottom: "0.5rem",
+            paddingLeft: "0.5rem"
+        }
+    }
 }

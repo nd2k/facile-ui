@@ -1,3 +1,5 @@
+import type { ButtonProps } from "button"
+
 declare module "interfaces" {
     interface FontDetails {
         family: string,
@@ -8,16 +10,20 @@ declare module "interfaces" {
     interface Theme {
         theme: string
         colors: {
-            [key: string]: {
-                [key: number|string]: string
+            [prop: string]: {
+                [prop: number|string]: string
             }
         },
         fontSizes: {
-            [key: string]: string
+            [prop: string]: string
         },
         fonts: {
-            [key: string]: FontDetails
+            [prop: string]: FontDetails
         },
+        button: ButtonProps,
+        [prop: string] : {
+            [prop: string]: string
+        }
     }
     export const Theme: Theme;
 
