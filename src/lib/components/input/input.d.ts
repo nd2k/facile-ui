@@ -1,11 +1,5 @@
-declare module "button" {
-    interface PaddingProps {
-        paddingTop?: string,
-        paddingRight?: string,
-        paddingBottom?: string,
-        paddingLeft?: string,
-    }
-    interface ButtonProps {
+declare module "input" {
+    interface InputProps {
         color?: string,
         bgColor?: string,
         borderColor?: string,

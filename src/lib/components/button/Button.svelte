@@ -1,10 +1,11 @@
 <script lang="ts">
 	import { theme } from "$lib/themes/theme";
-	import type { ButtonProps } from "button";
+	import { buttonProps } from "./button";
 
-    export let props: Partial<ButtonProps> = theme.button;
+    export let props = buttonProps;
     let style = `
         width: ${props.size};
+        color: ${props.color};
         border-radius: ${props.borderRadius};
         background-color: ${props.bgColor};
         border: ${props.border} solid ${props.borderColor};
@@ -16,7 +17,10 @@
     `;
 </script>
 
-<button {style} on:click={props.onClick}>
+<button 
+    {style} 
+    on:click={props.actions?.onClick} 
+    on:mouseenter={props.actions?.onHover}>
     <!--Slot: Start-->
     {#if $$slots.start}
         <div id="button-start"><slot name="start" /></div>

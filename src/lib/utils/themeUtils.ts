@@ -1,5 +1,6 @@
 import { ThemeEnum } from "$lib/themes/theme";
-import type { Theme } from "interfaces";
+import type { Theme } from "default-theme";
+
 
 export function initializeTheme(theme: Theme): string {
     let style: string = "";
@@ -7,30 +8,14 @@ export function initializeTheme(theme: Theme): string {
         if (token === "theme") {
             if (theme.theme === ThemeEnum.DARK) {
                 theme.colors = getDarkTheme(theme.colors);
+                style += `color: ${theme.fonts.families.body.lightColor};`;
+            } else {
+                style += `color: ${theme.fonts.families.body.darkColor};`;
             }
         }
-        else if (token === "colors") {
-            for (const token2 in theme.colors) {
-                for (const color in theme.colors[token2]) {
-                    style += `--${token2}-color-${color}: ${theme.colors[token2][color]};`;  
-                }
-            }
-        }
-        else if (token === "fonts") {
-            for (const token2 in theme.fonts) {
-                style += `--${token2}-font: ${theme.fonts[token2].family};`;
-            }
-        }
-        else if (token === "fontSizes") {
-            for (const token2 in theme.fontSizes) {
-                style += `--${token2}-font: ${theme.fontSizes[token2]};`;
-            }
-        }
-        else {
-            for (const token2 in theme[token]) {
-                style += `--${token}-${token2}: ${theme[token][token2]};`;
-            }
-        }
+        style += `font-family: ${theme.fonts.families.body.family};`;
+        style += `font-size: ${theme.fonts.sizes.md};`;
+        style += `background-color: ${theme.colors.background[100]};`;
     }
     return style;
 }

@@ -1,9 +1,5 @@
 @import "./reset.css";
 
 #app {
-    font-family: var(--body-font);
-    font-size: var(--md-font);
-    background-color: var(--background-color-300);
-    color: var(--font-color-950);
     box-sizing: border-box; 
 }
