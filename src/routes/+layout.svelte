@@ -4,6 +4,15 @@
 	import AppHeader from "$lib/layouts/AppBar.svelte";
 	import Sidebar from "$lib/layouts/Sidebar.svelte";
 	import ThemeManager from "$lib/layouts/ThemeManager.svelte";
+	import Button from "$lib/components/button/Button.svelte";
+	import { buttonProps } from "$lib/components/button/button";
+	import type { Props } from "component";
+	import { borders } from "$lib/themes/borders";
+
+	let btnProps: Props = buttonProps;
+	btnProps.bgColor = "inherent";
+	btnProps.border = "0";
+
 </script>
 
 <ThemeManager>
@@ -20,8 +29,16 @@
 				<!-- <svelte:fragment slot="start">(head)</svelte:fragment> -->
 				<div class="sidebar-menu">
 					<ul>
-						<li>Home</li>
-						<li>About</li>
+						<li>
+							<Button href="/" props={btnProps}>
+								Home
+							</Button>
+						</li>
+						<li>
+							<Button href="/about" props={btnProps}>
+								About
+							</Button>
+						</li>
 					</ul>
 				</div>
 				<svelte:fragment slot="end">(footer)</svelte:fragment>

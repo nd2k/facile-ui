@@ -8,11 +8,9 @@ export function initializeTheme(theme: Theme): string {
         if (token === "theme") {
             if (theme.theme === ThemeEnum.DARK) {
                 theme.colors = getDarkTheme(theme.colors);
-                style += `color: ${theme.fonts.families.body.lightColor};`;
-            } else {
-                style += `color: ${theme.fonts.families.body.darkColor};`;
             }
         }
+        style += `color: ${theme.colors.font[900]};`;
         style += `font-family: ${theme.fonts.families.body.family};`;
         style += `font-size: ${theme.fonts.sizes.md};`;
         style += `background-color: ${theme.colors.background[100]};`;

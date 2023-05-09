@@ -1,18 +1,19 @@
 import { theme } from "$lib/themes/theme";
 import type { Props } from "component";
 
-export const buttonProps: Props = {
-    color: theme.fonts.families.body.lightColor,
-    bgColor: theme.colors.primary[500],
+export const inputProps: Props = {
+    color: theme.fonts.families.body.darkColor,
+    bgColor: theme.colors.font[900],
     borderBottomLeftRadius: theme.borders.radius,
     borderBottomRightRadius: theme.borders.radius,
     borderTopLeftRadius: theme.borders.radius,
     borderTopRightRadius: theme.borders.radius,
-    border: theme.borders.solid,
+    border: "0",
     borderColor: theme.colors.primary[800],
-    padding: theme.paddings.lg,
+    padding: theme.paddings.sm,
     gap: "0.5rem",
     actions: {
         onClick: () => console.log("button click")
-    }
+    },
+    placeholder: "Placeholder"
 }
